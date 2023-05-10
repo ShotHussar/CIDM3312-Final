@@ -7,6 +7,7 @@ namespace final_ShotHussar.Models
     {
         public int TeamID { get; set; }
         public string TeamName {get; set;} = string.Empty;
+        public List<PlayerTeam> PlayerTeams = default!;
 
     }
 

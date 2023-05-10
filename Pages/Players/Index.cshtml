@@ -1,0 +1,92 @@
+@page
+@model final_ShotHussar.Pages.Players.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].AtBat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].Runs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].RBI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].StrikeOuts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].BattingAvg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].MLBTeam)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Player) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AtBat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Runs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RBI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrikeOuts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BattingAvg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MLBTeam)
+            </td>
+            <td>
+                 @foreach (var team in item.PlayerTeams!)
+            {
+                @team.Team.TeamName <br />
+            }
+            @if (item.PlayerTeams.Count == 0)
+            {
+                @:Not on Team
+            } 
+                <a asp-page="./Edit" asp-route-id="@item.PlayerID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PlayerID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PlayerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

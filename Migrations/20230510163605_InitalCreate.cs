@@ -5,7 +5,7 @@
 namespace final_ShotHussar.Migrations
 {
     /// <inheritdoc />
-    public partial class _InitialCreate : Migration
+    public partial class InitalCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,36 +25,16 @@ namespace final_ShotHussar.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
-                columns: table => new
-                {
-                    UserID = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    email = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User", x => x.UserID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
                 {
                     TeamID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserID = table.Column<int>(type: "INTEGER", nullable: false)
+                    TeamName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.TeamID);
-                    table.ForeignKey(
-                        name: "FK_Teams_User_UserID",
-                        column: x => x.UserID,
-                        principalTable: "User",
-                        principalColumn: "UserID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,12 +65,6 @@ namespace final_ShotHussar.Migrations
                 name: "IX_TeamPlayers_PlayerID",
                 table: "TeamPlayers",
                 column: "PlayerID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Teams_UserID",
-                table: "Teams",
-                column: "UserID",
-                unique: true);
         }
 
         /// <inheritdoc />
@@ -104,9 +78,6 @@ namespace final_ShotHussar.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teams");
-
-            migrationBuilder.DropTable(
-                name: "User");
         }
     }
 }

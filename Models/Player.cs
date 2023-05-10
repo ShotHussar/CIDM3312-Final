@@ -13,13 +13,13 @@ namespace final_ShotHussar.Models
         [Display(Name = "Last Name")]
         [Required]
         public string LastName {get; set;} = string.Empty;
-        //public string Position {get; set;} = string.Empty;
-        //public int AtBat {get; set;}
-        //public int Runs {get; set;}
-        //public int RBI {get; set;}
-        //public int StrikeOuts {get; set;}
-        //public float BattingAvg {get; set;}
-        //public string MLBTeam {get; set;} = string.Empty;
+        public string Position {get; set;} = string.Empty;
+        public int AtBat {get; set;}
+        public int Runs {get; set;}
+        public int RBI {get; set;}
+        public int StrikeOuts {get; set;}
+        public float BattingAvg {get; set;}
+        public string MLBTeam {get; set;} = string.Empty;
         public List<PlayerTeam>? PlayerTeams {get; set;} = default!;
     }
 }

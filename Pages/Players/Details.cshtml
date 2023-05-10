@@ -1,0 +1,99 @@
+@page
+@model final_ShotHussar.Pages.Players.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.AtBat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.AtBat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Runs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Runs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.RBI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.RBI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.StrikeOuts)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.StrikeOuts)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.BattingAvg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.BattingAvg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.MLBTeam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.MLBTeam)
+        </dd>
+        <ul>
+            @foreach(var team in Model.Player.PlayerTeams!)
+            {
+                <form method="post">
+                    <input type="hidden" asp-for="TeamIdToDelete" value="@team.Team.TeamID" />
+                <li>
+                    @team.Team.TeamName <input type="submit" Value="Drop" class="btn btn-danger btn-sm my-1" asp-page-handler="DeleteTeam" asp-route-id="@Model.Player.PlayerID">
+                </li>
+                </form>
+            }
+        </ul>  
+    </dl>
+    <div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="Player.PlayerID" />
+            <div class="form-group">
+                <select asp-items="Model.TeamsDropdown" asp-for="TeamIdToAdd" class="form-control">
+                    <option value="">--Select Team to Add--</option>
+                </select>
+                <span asp-validation-for="TeamIdToAdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Team" class="btn btn-primary" asp-page-handler="" asp-route-id="@Model.Player.PlayerID"/>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Player?.PlayerID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hunter\\Coding\\CIDM3312\\final\\final-ShotHussar\\final-ShotHussar.csproj": {}
+    "C:\\Users\\Hunter\\Coding\\CIDM3312\\_final\\CIDM3312-Final\\final-ShotHussar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hunter\\Coding\\CIDM3312\\final\\final-ShotHussar\\final-ShotHussar.csproj": {
+    "C:\\Users\\Hunter\\Coding\\CIDM3312\\_final\\CIDM3312-Final\\final-ShotHussar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hunter\\Coding\\CIDM3312\\final\\final-ShotHussar\\final-ShotHussar.csproj",
+        "projectUniqueName": "C:\\Users\\Hunter\\Coding\\CIDM3312\\_final\\CIDM3312-Final\\final-ShotHussar.csproj",
         "projectName": "final-ShotHussar",
-        "projectPath": "C:\\Users\\Hunter\\Coding\\CIDM3312\\final\\final-ShotHussar\\final-ShotHussar.csproj",
+        "projectPath": "C:\\Users\\Hunter\\Coding\\CIDM3312\\_final\\CIDM3312-Final\\final-ShotHussar.csproj",
         "packagesPath": "C:\\Users\\Hunter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hunter\\Coding\\CIDM3312\\final\\final-ShotHussar\\obj\\",
+        "outputPath": "C:\\Users\\Hunter\\Coding\\CIDM3312\\_final\\CIDM3312-Final\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hunter\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,15 +42,15 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

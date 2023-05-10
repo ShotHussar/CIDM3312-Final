@@ -8,37 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = final_ShotHussar
 build_property.RootNamespace = final_ShotHussar
-build_property.ProjectDir = c:\Users\Hunter\Coding\CIDM3312\final\final-ShotHussar\
+build_property.ProjectDir = C:\Users\Hunter\Coding\CIDM3312\_final\CIDM3312-Final\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Hunter\Coding\CIDM3312\final\final-ShotHussar
+build_property.MSBuildProjectDirectory = C:\Users\Hunter\Coding\CIDM3312\_final\CIDM3312-Final
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/Error.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/Index.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/Privacy.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Players/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Players/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Players/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Players/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Players/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/_ViewImports.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/_ViewStart.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Hunter/Coding/CIDM3312/final/final-ShotHussar/Pages/Shared/_Layout.cshtml]
+[C:/Users/Hunter/Coding/CIDM3312/_final/CIDM3312-Final/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3ct16q9up5

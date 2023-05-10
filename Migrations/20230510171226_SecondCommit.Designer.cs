@@ -10,20 +10,25 @@ using final_ShotHussar.Models;
 namespace final_ShotHussar.Migrations
 {
     [DbContext(typeof(TeamDbContext))]
-    [Migration("20230509231313__InitialCreate")]
-    partial class _InitialCreate
+    [Migration("20230510171226_SecondCommit")]
+    partial class SecondCommit
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
 
             modelBuilder.Entity("final_ShotHussar.Models.Player", b =>
                 {
                     b.Property<int>("PlayerID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("AtBat")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<float>("BattingAvg")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -32,6 +37,23 @@ namespace final_ShotHussar.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("MLBTeam")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("RBI")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Runs")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("StrikeOuts")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("PlayerID");
 
@@ -59,34 +81,13 @@ namespace final_ShotHussar.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("TeamName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("TeamID");
 
-                    b.HasIndex("UserID")
-                        .IsUnique();
-
                     b.ToTable("Teams");
-                });
-
-            modelBuilder.Entity("final_ShotHussar.Models.User", b =>
-                {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("final_ShotHussar.Models.PlayerTeam", b =>
@@ -108,26 +109,9 @@ namespace final_ShotHussar.Migrations
                     b.Navigation("Team");
                 });
 
-            modelBuilder.Entity("final_ShotHussar.Models.Team", b =>
-                {
-                    b.HasOne("final_ShotHussar.Models.User", "User")
-                        .WithOne("Team")
-                        .HasForeignKey("final_ShotHussar.Models.Team", "UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("final_ShotHussar.Models.Player", b =>
                 {
                     b.Navigation("PlayerTeams");
-                });
-
-            modelBuilder.Entity("final_ShotHussar.Models.User", b =>
-                {
-                    b.Navigation("Team")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
