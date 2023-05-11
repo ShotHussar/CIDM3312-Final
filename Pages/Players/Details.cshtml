@@ -71,7 +71,7 @@
                 <form method="post">
                     <input type="hidden" asp-for="TeamIdToDelete" value="@team.Team.TeamID" />
                 <li>
-                    @team.Team.TeamName <input type="submit" Value="Drop" class="btn btn-danger btn-sm my-1" asp-page-handler="DeleteTeam" asp-route-id="@Model.Player.PlayerID">
+                    @team.Team.TeamName <input type="submit" Value="Remove" class="btn btn-danger btn-sm my-1" asp-page-handler="DeleteTeam" asp-route-id="@Model.Player.PlayerID">
                 </li>
                 </form>
             }
@@ -85,6 +85,7 @@
                 <select asp-items="Model.TeamsDropdown" asp-for="TeamIdToAdd" class="form-control">
                     <option value="">--Select Team to Add--</option>
                 </select>
+                <br/>
                 <span asp-validation-for="TeamIdToAdd" class="text-danger"></span>
             </div>
             <div class="form-group">

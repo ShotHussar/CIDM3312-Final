@@ -9,6 +9,7 @@ namespace final_ShotHussar.Models
 
         [Display(Name = "First Name")]
         [Required]
+        [MaxLength(30), MinLength(3)]
         public string FirstName { get; set; } = string.Empty;
 
         [Display(Name = "Last Name")]

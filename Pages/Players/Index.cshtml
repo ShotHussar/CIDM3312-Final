@@ -39,7 +39,7 @@
                         lastSort = "last_desc";
                     }
                 }
-                <a asp-page="./Index" asp-route-CurrentSort="@lastSort">@Html.DisplayNameFor(model => model.Player[0].LastName)</a>
+                <a asp-page="./Index" asp-route-CurrentSort="@lastSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Player[0].LastName)</a>
             </th>
             <th>
                 @{
@@ -49,7 +49,7 @@
                         posSort = "pos_desc";
                     }
                 }
-                <a asp-page="./Index" asp-route-CurrentSort="@posSort">@Html.DisplayNameFor(model => model.Player[0].Position)</a>
+                <a asp-page="./Index" asp-route-CurrentSort="@posSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Player[0].Position)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Player[0].AtBat)
@@ -71,7 +71,7 @@
                         avgSort = "avg_desc";
                     }
                 }
-                <a asp-page="./Index" asp-route-CurrentSort="@avgSort">@Html.DisplayNameFor(model => model.Player[0].BattingAvg)</a>
+                <a asp-page="./Index" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Player[0].BattingAvg)</a>
             </th>
             <th>
                 @{
@@ -81,9 +81,11 @@
                         teamSort = "team_desc";
                     }
                 }
-                <a asp-page="./Index" asp-route-CurrentSort="@teamSort">@Html.DisplayNameFor(model => model.Player[0].MLBTeam)</a>
+                <a asp-page="./Index" asp-route-CurrentSort="@teamSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Player[0].MLBTeam)</a>
             </th>
-            <th></th>
+            <th>
+                Team #
+            </th>
         </tr>
     </thead>
     <tbody>
