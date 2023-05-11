@@ -10,17 +10,46 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Player First Name <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].FirstName)
+                @{
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.Player[0].FirstName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].LastName)
+                @{
+                    var lastSort = "last_asc";
+                    if (Model.CurrentSort == "last_asc")
+                    {
+                        lastSort = "last_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@lastSort">@Html.DisplayNameFor(model => model.Player[0].LastName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].Position)
+                @{
+                    var posSort = "pos_asc";
+                    if (Model.CurrentSort == "pos_asc")
+                    {
+                        posSort = "pos_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@posSort">@Html.DisplayNameFor(model => model.Player[0].Position)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Player[0].AtBat)
@@ -35,10 +64,24 @@
                 @Html.DisplayNameFor(model => model.Player[0].StrikeOuts)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].BattingAvg)
+                @{
+                    var avgSort  = "avg_asc";
+                    if (Model.CurrentSort == "avg_asc")
+                    {
+                        avgSort = "avg_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@avgSort">@Html.DisplayNameFor(model => model.Player[0].BattingAvg)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].MLBTeam)
+                @{
+                    var teamSort = "team_asc";
+                    if (Model.CurrentSort == "team_asc")
+                    {
+                        teamSort = "team_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@teamSort">@Html.DisplayNameFor(model => model.Player[0].MLBTeam)</a>
             </th>
             <th></th>
         </tr>
@@ -74,7 +117,7 @@
                 @Html.DisplayFor(modelItem => item.MLBTeam)
             </td>
             <td>
-                 @foreach (var team in item.PlayerTeams!)
+                @foreach (var team in item.PlayerTeams!)
             {
                 @team.Team.TeamName <br />
             }
@@ -82,11 +125,36 @@
             {
                 @:Not on Team
             } 
-                <a asp-page="./Edit" asp-route-id="@item.PlayerID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PlayerID">Details</a> |
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PlayerID">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.PlayerID">Details</a>
                 <a asp-page="./Delete" asp-route-id="@item.PlayerID">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<hr />
+@{
+    var prevDisabled="";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+
+    var nextDisabled="";
+    if (Model.totalPlayers - (Model.PageNum - 1)* Model.PageSize <= 10)
+    {
+        nextDisabled = "disabled";
+    }
+    
+}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+    <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+  </ul>
+</nav> 
