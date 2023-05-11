@@ -154,7 +154,7 @@
 
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
-    <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+    <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-CurrentSort="@avgSort" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
   </ul>
 </nav> 

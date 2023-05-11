@@ -34,9 +34,6 @@ namespace final_ShotHussar.Pages.Players
         public string? SearchString { get; set; }
         public SelectList? PlayerName { get; set; }
 
-        //[BindProperty(SupportsGet = true)]
-        //public string avgSort { get; set; }
-
 
         public async Task OnGetAsync()
         {
